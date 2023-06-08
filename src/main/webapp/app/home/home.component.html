@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="container">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <h1>Translate this page!</h1>
+      <div id="google_translate_element"></div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+  }
+</script>
+
+<div class="row">
+  <div class="col-md-3">
+    <span class="hipster img-fluid rounded"></span>
+  </div>
+
+  <div class="col-md-9">
+    <h1 class="display-4"><span>Welcome, To Books Ratings System!</span> (Full Stack)</h1>
+
+    <p class="lead">This is your homepage</p>
+
+    <div [ngSwitch]="account !== null">
+      <div class="alert alert-success" *ngSwitchCase="true">
+        <span id="home-logged-message" *ngIf="account">You are logged in as user "{{ account.login }}".</span>
+      </div>
+
+      <div class="alert alert-warning" *ngSwitchCase="false">
+        <span>If you want to </span>
+        <a class="alert-link" (click)="login()">sign in</a
+        ><span
+          >, you can try the default accounts:<br />- Administrator (login="admin" and password="admin") <br />- User (login="user" and
+          password="user").</span
+        >
+      </div>
+
+      <div class="alert alert-warning" *ngSwitchCase="false">
+        <span>You don't have an account yet?</span>&nbsp;
+        <a class="alert-link" routerLink="account/register">Register a new account</a>
+      </div>
+    </div>
+
+    <p>If you have any question , you can contact me:</p>
+
+    <ul>
+      <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
+      <li>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </li>
+      <li>
+        <a href="https://Instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </li>
+      <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+    </ul>
+  </div>
+  <div></div>
+</div>
